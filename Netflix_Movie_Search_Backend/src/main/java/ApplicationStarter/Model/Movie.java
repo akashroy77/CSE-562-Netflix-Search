@@ -8,36 +8,48 @@
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)
 //    @Column(name="movieID",nullable = false)
-//    long id;
+//    int id;
 //    @Column(name="title",nullable = false)
 //    String title;
 //    @Column(name="userID",nullable = false)
-//    long userID;
+//    int userID;
 //    @Column(name="leadCast")
 //    String leadCast;
 //    @Column(name="releaseDate",nullable = false)
 //    String releaseDate;
 //    @Column(name="language",nullable = false)
 //    String language;
+//    @Column(name="genreid",nullable = false)
+//    int genreid;
 //
-//    public Movie(long id, String title, long userID, String leadCast, String releaseDate, String language) {
+//
+//    public long getGenreid() {
+//        return genreid;
+//    }
+//
+//    public void setGenreid(int genreid) {
+//        this.genreid = genreid;
+//    }
+//
+//    public Movie(int id, String title, int userID, String leadCast, String releaseDate, String language, int genreid) {
 //        this.id = id;
 //        this.title = title;
 //        this.userID = userID;
 //        this.leadCast = leadCast;
 //        this.releaseDate = releaseDate;
 //        this.language = language;
+//        this.genreid = genreid;
 //    }
 //
 //    public Movie() {
 //    }
 //
 //
-//    public long getId() {
+//    public int getId() {
 //        return id;
 //    }
 //
-//    public void setId(long id) {
+//    public void setId(int id) {
 //        this.id = id;
 //    }
 //
@@ -49,11 +61,11 @@
 //        this.title = title;
 //    }
 //
-//    public long getUserID() {
+//    public int getUserID() {
 //        return userID;
 //    }
 //
-//    public void setUserID(long userID) {
+//    public void setUserID(int userID) {
 //        this.userID = userID;
 //    }
 //

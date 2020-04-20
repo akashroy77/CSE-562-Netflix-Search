@@ -1,0 +1,23 @@
+
+.primary{
+    margin-left: auto;
+    
+}
+
+.spacing{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1%;
+}
+
+.filter{
+    background-color: #f48fb1;
+}
+
+.filter button{
+    margin-left: auto;
+}
+
+.search{
+    background-color: #ccff90;
+}
