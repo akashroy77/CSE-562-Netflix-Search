@@ -1,0 +1,97 @@
+body {
+    background: url('http://getwallpapers.com/wallpaper/full/a/5/6/1063480-full-size-google-data-center-wallpaper-1920x1080-for-android-40.jpg');
+    font-family: 'Ubuntu', sans-serif;
+}
+
+form.formStyle {
+    padding-top: 10px;
+}
+.main {
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 650px;
+    margin: 3em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+    padding-top: 40px;
+    color: #8C55AA;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.inputStyle {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 20px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+
+.styled-select select {
+    width: 37%;
+    color: black;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background: burlywood;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 130px;
+    margin-bottom: 27px;
+    margin-top: 5px;
+    font-family: 'Ubuntu', sans-serif;
+     }
+.submitButton{
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: burlywood;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    margin-top: 5px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.labelStyle {
+    width: 76%;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 10px;
+    border: hidden;
+    border-radius: 2px;
+    margin-left: 46px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    }
