@@ -84,14 +84,35 @@ class Filter extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        selectValue: ""
+        selectValue: "",
+        category: "",
+        plan: "",
+        stream: ""
       };
   
-      this.handleDropdownChange = this.handleDropdownChange.bind(this);
+      this.handleCategoryChange = this.handleCategoryChange.bind(this);
+      this.handlePlanChange = this.handlePlanChange.bind(this);
+      this.handleStreamChange = this.handleStreamChange.bind(this);
     }
   
-    handleDropdownChange(e) {
-      this.setState({ selectValue: e.target.value });
+    handleCategoryChange(e) {
+      this.setState({ category: e.target.value });
+      console.log(this.state);
+      this.display();
+    }
+
+    handlePlanChange(e) {
+        this.setState({ plan: e.target.value });
+        this.display();
+    }
+
+    handleStreamChange(e) {
+        this.setState({ stream: e.target.value });
+        this.display();
+    }
+
+    display = () =>{
+        console.log(this.state);
     }
   
     render() {
@@ -103,16 +124,30 @@ class Filter extends React.Component {
             var temp = null;
         }
       return (
-        <Container>
+        <Container className="spacing">
           <div>
-            <div>
-              <select id="dropdown" onChange={this.handleDropdownChange}>
-                <option value="Movies">Movies</option>
-                <option value="PaymentPlan">Payment Plan</option>
-                <option value="Cast">Cast</option>
-                <option value="Genre">Genre</option>
+            
+              <select className="ddspacing" id="dropdown" name="category" onChange={this.handleCategoryChange}>
+                <option value="Action">Action</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Romance">Romance</option>
+                <option value="Horror">Horror</option>
               </select>
-            </div>
+            
+            
+              <select className="ddspacing" id="dropdown" name="plan" onChange={this.handlePlanChange}>
+                <option value="basic">Basic</option>
+                <option value="stsandard">Standard</option>
+                <option value="premium">Premium</option>
+              </select>
+          
+              <select className="ddspacing" id="dropdown" name="stream" onChange={this.handleStreamChange}>
+                <option value="normal">480p</option>
+                <option value="HD">720p</option>
+                <option value="fullHD">1080p</option>
+                <option value="2k">2160p</option>
+              </select>
+        
   
             <div>Selected value is : {this.state.selectValue}</div>
             {/* {this.state.selectValue === "PaymentPlan" ? <PaymentList/> : <GenreList/>} */}

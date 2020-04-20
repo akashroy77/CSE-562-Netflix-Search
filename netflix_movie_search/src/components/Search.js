@@ -37,17 +37,6 @@ class Search extends Component{
                 aria-describedby="basic-addon2"
                 />
                 <InputGroup.Append>
-
-                    {/* <DropdownButton
-                    as={InputGroup.Append}
-                    variant="outline-secondary"
-                    title="Movie"
-                    id="input-group-dropdown-2"
-                    >
-                        <Dropdown.Item href="#">Movie</Dropdown.Item>
-                        <Dropdown.Item href="#">Cast</Dropdown.Item>
-                        <Dropdown.Item href="#">Plan</Dropdown.Item>
-                    </DropdownButton> */}
                     <select id="dropdown" onChange={this.handleDropdownChange}>
                         <option value="Movies">Movies</option>
                         <option value="PaymentPlan">Payment Plan</option>
