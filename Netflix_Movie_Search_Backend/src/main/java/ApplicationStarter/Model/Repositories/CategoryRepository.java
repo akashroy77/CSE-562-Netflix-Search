@@ -10,5 +10,4 @@ public interface CategoryRepository extends CrudRepository<Category,Long> {
 
     @Query("select c.genre from Category c where c.imdb_rating = ?1")
     List<Category> findByNameEndsWith(int i);
-
 }

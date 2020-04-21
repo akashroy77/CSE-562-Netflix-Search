@@ -2,9 +2,11 @@ package ApplicationStarter.Controllers;
 
 //import ApplicationStarter.Model.Movie;
 import ApplicationStarter.Model.Category;
+import ApplicationStarter.Model.Movie;
 import ApplicationStarter.Model.Payment;
 //import ApplicationStarter.Model.Repositories.MovieRepository;
 import ApplicationStarter.Model.Repositories.CategoryRepository;
+import ApplicationStarter.Model.Repositories.MovieRepository;
 import ApplicationStarter.Model.Repositories.PaymentRepository;
 //import ApplicationStarter.Model.Repositories.UserRepository;
 //import ApplicationStarter.Model.User;
@@ -58,6 +60,15 @@ public class DataQueryController {
 //        int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
         List<Category> categoryList = (List<Category>) categoryRepository1.findByNameEndsWith(selectedNumber);
         return categoryList;
+    }
+
+    @Autowired
+    private MovieRepository movieRepository;
+    @RequestMapping("/NetflixDB/category/search/movie")
+    public List<Movie> movieNameSearch(@RequestParam("selectedNumber") String selectedNumber) {
+        System.out.println(selectedNumber);
+        List<Movie> movieList = (List<Movie>) movieRepository.findByMovieName(selectedNumber);
+        return movieList;
     }
 
     @GetMapping("/index.html")
