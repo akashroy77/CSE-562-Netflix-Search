@@ -15,15 +15,4 @@ import java.net.URISyntaxException;
 @RestController
 
 public class DataAddController {
-    private  ResourceAssembler assembler;
-
-    @PostMapping("/employees")
-    ResponseEntity<?> newPaymentPlan(@RequestBody Payment newPlan) throws URISyntaxException {
-
-        Resource<Payment> resource = assembler.toResource(PaymentRepository.save(newPaymentPlan()));
-
-        return ResponseEntity
-                .created(new URI(resource.getId().expand().getHref()))
-                .body(resource);
-    }
 }

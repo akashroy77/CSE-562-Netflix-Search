@@ -10,26 +10,26 @@ import javax.persistence.*;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="genreID",nullable = false)
+    @Column(name="genre_id",nullable = false)
     int id;
     @Column(name="genre",nullable = false)
     String genre;
     @Column(name="duration",nullable = false)
     int duration;
-    @Column(name="imdbRating",nullable = false)
-    int imdbRating;
-    @Column(name="totalRevenue",nullable = false)
-    int totalRevenue;
+    @Column(name="imdb_rating",nullable = false)
+    int imdb_rating;
+    @Column(name="total_revenue",nullable = false)
+    int total_revenue;
 
     public Category() {
     }
 
-    public Category(int id, String genre, int duration, int imdbRating, int totalRevenue) {
+    public Category(int id, String genre, int duration, int imdb_rating, int total_revenue) {
         this.id = id;
         this.genre = genre;
         this.duration = duration;
-        this.imdbRating = imdbRating;
-        this.totalRevenue = totalRevenue;
+        this.imdb_rating = imdb_rating;
+        this.total_revenue = total_revenue;
     }
 
     public int getId() {
@@ -56,19 +56,19 @@ public class Category {
         this.duration = duration;
     }
 
-    public int getImdbRating() {
-        return imdbRating;
+    public int getImdb_rating() {
+        return imdb_rating;
     }
 
-    public void setImdbRating(int imdbRating) {
-        this.imdbRating = imdbRating;
+    public void setImdb_rating(int imdb_rating) {
+        this.imdb_rating = imdb_rating;
     }
 
-    public int getTotalRevenue() {
-        return totalRevenue;
+    public int getTotal_revenue() {
+        return total_revenue;
     }
 
-    public void setTotalRevenue(int totalRevenue) {
-        this.totalRevenue = totalRevenue;
+    public void setTotal_revenue(int total_revenue) {
+        this.total_revenue = total_revenue;
     }
 }
