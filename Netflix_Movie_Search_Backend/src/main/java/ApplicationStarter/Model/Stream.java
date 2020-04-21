@@ -11,7 +11,7 @@ public class Stream {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="stream_id",nullable = false)
-    long id;
+    long streamid;
     @Column(name="movie_id",nullable = false)
     long movie_id;
     @Column(name="pixel_quality",nullable = false)
@@ -27,7 +27,7 @@ public class Stream {
     }
 
     public Stream(long id, long movieID, String pixelQuality, String paymentPlan, int streamRating, int totalView) {
-        this.id = id;
+        this.streamid = id;
         this.movie_id = movieID;
         this.pixel_quality = pixelQuality;
         this.payment_plan = paymentPlan;
@@ -36,17 +36,17 @@ public class Stream {
     }
 
     public long getId() {
-        return id;
+        return streamid;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this.streamid = id;
     }
 
     @Override
     public String toString() {
         return "Stream{" +
-                "id=" + id +
+                "id=" + streamid +
                 ", movieID=" + movie_id +
                 ", pixelQuality='" + pixel_quality + '\'' +
                 ", paymentPlan='" + payment_plan + '\'' +

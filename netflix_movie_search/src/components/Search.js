@@ -4,6 +4,7 @@ import { Container, InputGroup, Button, FormControl, Dropdown, DropdownButton } 
 import PaymentList from './PaymentList';
 import GenreList from './GenreList';
 import axios from 'axios';
+import MovieList from './MovieList';
 
 class Search extends Component{
     constructor(props) {
@@ -61,6 +62,10 @@ class Search extends Component{
             var caller = "http://localhost:8080/api/NetflixDB/category/search/movie?selectedNumber=" + this.state.selectedNumber; 
           }else if(this.state.table === "Category"){
             var caller = "http://localhost:8080/api/NetflixDB/category/search?selectedNumber=" + this.state.selectedNumber;
+          }else if(this.state.table === "Cast"){
+            var caller = "http://localhost:8080/api/NetflixDB/category/search/actor?selectedNumber=" + this.state.selectedNumber;
+          }else if(this.state.table === "Stream"){
+            var caller = "http://localhost:8080/api/NetflixDB/category/search/stream?selectedNumber=" + this.state.selectedNumber;
           }else{
             var caller = "http://localhost:8080/api/NetflixDB/category/search?selectedNumber=" + this.state.selectedNumber;
           }
@@ -108,12 +113,15 @@ class Search extends Component{
                                             <tr>
                                                 <td>{element[0]}</td>
                                                 <td>{element[1]}</td>
+                                                <td>{element[2]}</td>
                                             </tr>
                                         ))
                                         
                                     }
                                 </tbody>
                     </table> 
+
+                    {/* {<MovieList data={this.state.returned}/>} */}
                 </div>
         </Container>
       );

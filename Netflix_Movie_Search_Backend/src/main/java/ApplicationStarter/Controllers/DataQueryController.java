@@ -1,15 +1,9 @@
 package ApplicationStarter.Controllers;
 
 //import ApplicationStarter.Model.Movie;
-import ApplicationStarter.Model.Actors;
-import ApplicationStarter.Model.Category;
-import ApplicationStarter.Model.Movie;
-import ApplicationStarter.Model.Payment;
+import ApplicationStarter.Model.*;
 //import ApplicationStarter.Model.Repositories.MovieRepository;
-import ApplicationStarter.Model.Repositories.CastRepository;
-import ApplicationStarter.Model.Repositories.CategoryRepository;
-import ApplicationStarter.Model.Repositories.MovieRepository;
-import ApplicationStarter.Model.Repositories.PaymentRepository;
+import ApplicationStarter.Model.Repositories.*;
 //import ApplicationStarter.Model.Repositories.UserRepository;
 //import ApplicationStarter.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,6 +73,24 @@ public class DataQueryController {
         System.out.println(selectedNumber);
         List<Movie> movieList = (List<Movie>) movieRepository.findByMovieName(selectedNumber);
         return movieList;
+    }
+
+    @Autowired
+    private CastRepository castRepository2;
+    @RequestMapping("/NetflixDB/category/search/actor")
+    public List<Actors> actorSearch(@RequestParam("selectedNumber") String selectedNumber) {
+        System.out.println(selectedNumber);
+        List<Actors> actorsList = (List<Actors>) castRepository2.findAllCast(selectedNumber);
+        return actorsList;
+    }
+
+    @Autowired
+    private StreamRepository streamRepository;
+    @RequestMapping("/NetflixDB/category/search/stream")
+    public List<Stream> streamSearch(@RequestParam("selectedNumber") String selectedNumber) {
+        System.out.println(selectedNumber);
+        List<Stream> streamList = (List<Stream>) streamRepository.findAllStream(selectedNumber);
+        return streamList;
     }
 
     @GetMapping("/index.html")

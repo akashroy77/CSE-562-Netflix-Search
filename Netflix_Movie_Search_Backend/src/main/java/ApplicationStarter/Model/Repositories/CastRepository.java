@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CastRepository extends CrudRepository<Actors,Long> {
 
-    @Query("select c.actorid, c.actorname, c.country, c.address from Actors c")
-    List<Actors> findAllCast();
+    @Query("select c.actorid, c.actorname, c.country, c.address from Actors c where c.actorname LIKE ?1%")
+    List<Actors> findAllCast(String actor);
 
 }

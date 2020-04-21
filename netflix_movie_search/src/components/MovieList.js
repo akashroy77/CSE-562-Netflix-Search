@@ -6,8 +6,9 @@ class MovieList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            movies : []
+            movies : [],
         };
+        // this.setState({passed : this.props.data})
     }
 
     componentDidMount(){
@@ -18,18 +19,20 @@ class MovieList extends Component {
         );
     }
 
+
     render() {
+        // const {passed} = this.props;
         return (
                 <div>
-                    <p>Total available Movies are : {this.state.movies.length}</p>
-
+                    {/* <p>Total available Movies are : {this.state.passed.length}</p> */}
+                    
                     {
                         this.state.movies.map((movie) => (
                             <table border="1">
                                 <tbody>
-                                    <tr key={movie.paymentPlan}>
-                                        <td>{movie.paymentPlan}</td>
-                                        <td>{movie.paymentAmount}</td>
+                                    <tr>
+                                        <td>{movie.streamid}</td>
+                                        <td>{movie.id}</td>
                                         <td>{movie.lateCharge}</td>
                                     </tr>
                                 </tbody>
