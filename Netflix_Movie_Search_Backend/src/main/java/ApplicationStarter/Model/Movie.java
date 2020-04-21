@@ -7,70 +7,38 @@ import javax.persistence.*;
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="movieID",nullable = false)
-    long id;
-    @Column(name="title",nullable = false)
-    String title;
-    @Column(name="userID",nullable = false)
-    long userID;
-    @Column(name="leadCast")
-    String leadCast;
-    @Column(name="releaseDate",nullable = false)
-    String releaseDate;
+    @Column(name="movieid",nullable = false)
+    long movieid;
     @Column(name="language",nullable = false)
     String language;
+    @Column(name="lead_cast")
+    String lead_cast;
+    @Column(name="title",nullable = false)
+    String title;
+    @Column(name="userid",nullable = false)
+    long userid;
+    @Column(name="release_date",nullable = false)
+    String release_date;
 
-    public Movie(long id, String title, long userID, String leadCast, String releaseDate, String language) {
-        this.id = id;
-        this.title = title;
-        this.userID = userID;
-        this.leadCast = leadCast;
-        this.releaseDate = releaseDate;
+    public Movie(long movieid, String language, String lead_cast, long userid, String title, String release_date) {
+        this.movieid = movieid;
         this.language = language;
+        this.lead_cast = lead_cast;
+        this.userid = userid;
+        this.title = title;
+        this.release_date = release_date;
     }
 
     public Movie() {
     }
 
 
-    public long getId() {
-        return id;
+    public long getMovieid() {
+        return movieid;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public long getUserID() {
-        return userID;
-    }
-
-    public void setUserID(long userID) {
-        this.userID = userID;
-    }
-
-    public String getLeadCast() {
-        return leadCast;
-    }
-
-    public void setLeadCast(String leadCast) {
-        this.leadCast = leadCast;
-    }
-
-    public String getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
+    public void setMovieid(long movieid) {
+        this.movieid = movieid;
     }
 
     public String getLanguage() {
@@ -81,15 +49,47 @@ public class Movie {
         this.language = language;
     }
 
+    public String getLead_cast() {
+        return lead_cast;
+    }
+
+    public void setLead_cast(String lead_cast) {
+        this.lead_cast = lead_cast;
+    }
+
+    public long getUserid() {
+        return userid;
+    }
+
+    public void setUserid(long userid) {
+        this.userid = userid;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getRelease_date() {
+        return release_date;
+    }
+
+    public void setRelease_date(String release_date) {
+        this.release_date = release_date;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", userID=" + userID +
-                ", leadCast='" + leadCast + '\'' +
-                ", releaseDate='" + releaseDate + '\'' +
+                "movieid=" + movieid +
                 ", language='" + language + '\'' +
+                ", lead_cast='" + lead_cast + '\'' +
+                ", title='" + title + '\'' +
+                ", userid=" + userid +
+                ", release_date='" + release_date + '\'' +
                 '}';
     }
 }

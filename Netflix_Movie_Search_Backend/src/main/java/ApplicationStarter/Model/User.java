@@ -3,23 +3,23 @@ package ApplicationStarter.Model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="userID",nullable = false)
+    @Column(name="userid",nullable = false)
     private long userID;
+    @Column(name="country",nullable = false)
+    private String country;
+    @Column(name="emailid",nullable = false)
+    private String emailID;
     @Column(name="firstname")
     private String firstname;
     @Column(name="lastname")
     private String lastname;
-    @Column(name="emailID",nullable = false)
-    private String emailID;
-    @Column(name="country",nullable = false)
-    private String country;
     @Column(name="userdob",nullable = false)
     private String userdob;
-    @Column(name="paymentPlan",nullable = false)
+    @Column(name="payment_plan",nullable = false)
     private String paymentPlan;
 
     public User(int userID, String firstname, String lastname, String emailID, String country, String userdob,String paymentPlan) {
