@@ -1,7 +1,14 @@
 package ApplicationStarter.Model.Repositories;
 
-import ApplicationStarter.Model.Cast;
+import ApplicationStarter.Model.Actors;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-public interface CastRepository extends CrudRepository<Cast,Long> {
+import java.util.List;
+
+public interface CastRepository extends CrudRepository<Actors,Long> {
+
+    @Query("select c.actorid, c.actorname, c.country, c.address from Actors c")
+    List<Actors> findAllCast();
+
 }

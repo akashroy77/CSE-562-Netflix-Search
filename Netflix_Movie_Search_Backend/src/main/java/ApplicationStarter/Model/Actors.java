@@ -5,57 +5,57 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "cast")
+@Table(name = "actors")
 @CrossOrigin("*")
-public class Cast {
+public class Actors {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="castid",nullable = false)
-    int id;
-    @Column(name="castname",nullable = false)
-    String cast_name;
+    @Column(name="actorid",nullable = false)
+    long actorid;
+    @Column(name="actorname",nullable = false)
+    String actorname;
     @Column(name="movie_id",nullable = false)
-    int movie_id;
+    long movie_id;
     @Column(name="country",nullable = false)
     String country;
-    @Column(name="castdob",nullable = false)
-    String cast_dob;
+    @Column(name="actordob",nullable = false)
+    String actordob;
     @Column(name="address",nullable = false)
     String address;
 
-    public Cast(int id, String cast_name, int movie_id, String country, String cast_dob, String address) {
-        this.id = id;
-        this.cast_name = cast_name;
+    public Actors(long id, String actorname, int movie_id, String country, String actordob, String address) {
+        this.actorid = id;
+        this.actorname = actorname;
         this.movie_id = movie_id;
         this.country = country;
-        this.cast_dob = cast_dob;
+        this.actordob = actordob;
         this.address = address;
     }
 
-    public Cast() {
+    public Actors() {
     }
 
-    public long getId() {
-        return id;
+    public long getActorid() {
+        return actorid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setActorid(long id) {
+        this.actorid = id;
     }
 
-    public String getCast_name() {
-        return cast_name;
+    public String getActorname() {
+        return actorname;
     }
 
-    public void setCast_name(String cast_name) {
-        this.cast_name = cast_name;
+    public void setActorname(String actorname) {
+        this.actorname = actorname;
     }
 
-    public int getMovie_id() {
+    public long getMovie_id() {
         return movie_id;
     }
 
-    public void setMovie_id(int movie_id) {
+    public void setMovie_id(long movie_id) {
         this.movie_id = movie_id;
     }
 
@@ -67,12 +67,12 @@ public class Cast {
         this.country = country;
     }
 
-    public String getCast_dob() {
-        return cast_dob;
+    public String getActordob() {
+        return actordob;
     }
 
-    public void setCast_dob(String cast_dob) {
-        this.cast_dob = cast_dob;
+    public void setActordob(String actordob) {
+        this.actordob = actordob;
     }
 
     public String getAddress() {
@@ -86,11 +86,11 @@ public class Cast {
     @Override
     public String toString() {
         return "Cast{" +
-                "id=" + id +
-                ", castName='" + cast_name + '\'' +
+                "id=" + actorid +
+                ", castName='" + actorname + '\'' +
                 ", movieID=" + movie_id +
                 ", country='" + country + '\'' +
-                ", castDob='" + cast_dob + '\'' +
+                ", castDob='" + actordob + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }

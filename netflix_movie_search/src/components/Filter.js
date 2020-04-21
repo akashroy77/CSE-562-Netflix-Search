@@ -3,6 +3,7 @@ import {Form, Container, DropdownButton, Dropdown, Row, Col, Button} from 'react
 import './componentCSS.css';
 import PaymentList from './PaymentList';
 import GenreList from './GenreList';
+import CastList from './CastList';
 
 // function handleChange(event) {
 //     // this.setState({ selectValue: e.target.value });
@@ -120,6 +121,8 @@ class Filter extends React.Component {
             var temp = <PaymentList/>
         }else if(this.state.category === "Horror"){
             var temp = <GenreList/>
+        } else if(this.state.category === "Romance"){
+            var temp = <CastList/>
         }else{
             var temp = null;
         }
@@ -149,7 +152,7 @@ class Filter extends React.Component {
               </select>
         
   
-            <div>Selected value is : {this.state.selectValue}</div>
+            <div>Selected value is : {this.state.category}</div>
             {/* {this.state.selectValue === "PaymentPlan" ? <PaymentList/> : <GenreList/>} */}
             {/* {this.state.selectValue === "Genre" ? <GenreList/> : null} */}
             {temp}

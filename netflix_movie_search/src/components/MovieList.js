@@ -41,4 +41,4 @@ class MovieList extends Component {
     }
 }
 
-export default PaymentList;
+export default MovieList;

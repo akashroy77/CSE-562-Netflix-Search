@@ -1,10 +1,12 @@
 package ApplicationStarter.Controllers;
 
 //import ApplicationStarter.Model.Movie;
+import ApplicationStarter.Model.Actors;
 import ApplicationStarter.Model.Category;
 import ApplicationStarter.Model.Movie;
 import ApplicationStarter.Model.Payment;
 //import ApplicationStarter.Model.Repositories.MovieRepository;
+import ApplicationStarter.Model.Repositories.CastRepository;
 import ApplicationStarter.Model.Repositories.CategoryRepository;
 import ApplicationStarter.Model.Repositories.MovieRepository;
 import ApplicationStarter.Model.Repositories.PaymentRepository;
@@ -15,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 @RestController
 @RequestMapping("/api")
@@ -53,11 +54,20 @@ public class DataQueryController {
     }
 
     @Autowired
+    private CastRepository castRepository;
+    @GetMapping("/NetflixDB/cast")
+    public List<Actors> getAllCasts(){
+
+        List<Actors> castList;
+        castList = (List<Actors>) castRepository.findAll();
+        return castList;
+    }
+
+    @Autowired
     private CategoryRepository categoryRepository1;
     @RequestMapping("/NetflixDB/category/search")
     public List<Category> test2(@RequestParam("selectedNumber") int selectedNumber) {
         System.out.println(selectedNumber);
-//        int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
         List<Category> categoryList = (List<Category>) categoryRepository1.findByNameEndsWith(selectedNumber);
         return categoryList;
     }
