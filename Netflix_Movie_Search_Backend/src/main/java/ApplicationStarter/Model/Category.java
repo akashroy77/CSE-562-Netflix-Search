@@ -7,42 +7,38 @@ import javax.persistence.*;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="genreID",nullable = false)
-    long id;
-    @Column(name="genre",nullable = false)
-    String genre;
+    @Column(name="genreid",nullable = false)
+    long genreid;
     @Column(name="duration",nullable = false)
     int duration;
-    @Column(name="imdbRating",nullable = false)
-    int imdbRating;
-    @Column(name="totalRevenue",nullable = false)
-    int totalRevenue;
+    @Column(name="genre",nullable = false)
+    String genre;
+    @Column(name="imdb_rating",nullable = false)
+    int imdb_rating;
+    @Column(name="total_revenue",nullable = false)
+    int total_revenue;
+    @Column(name = "movieid",nullable = false)
+    long movieid;
 
     public Category() {
     }
 
-    public Category(long id, String genre, int duration, int imdbRating, int totalRevenue) {
-        this.id = id;
-        this.genre = genre;
+    public Category(long genreid, int duration, String genre, int imdb_rating, int total_revenue, long movieid) {
+        this.genreid = genreid;
         this.duration = duration;
-        this.imdbRating = imdbRating;
-        this.totalRevenue = totalRevenue;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
         this.genre = genre;
+        this.imdb_rating = imdb_rating;
+        this.total_revenue = total_revenue;
+        this.movieid = movieid;
+    }
+
+
+    public long getGenreid() {
+        return genreid;
+    }
+
+    public void setGenreid(long genreid) {
+        this.genreid = genreid;
     }
 
     public int getDuration() {
@@ -53,19 +49,47 @@ public class Category {
         this.duration = duration;
     }
 
-    public int getImdbRating() {
-        return imdbRating;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setImdbRating(int imdbRating) {
-        this.imdbRating = imdbRating;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public int getTotalRevenue() {
-        return totalRevenue;
+    public int getImdb_rating() {
+        return imdb_rating;
     }
 
-    public void setTotalRevenue(int totalRevenue) {
-        this.totalRevenue = totalRevenue;
+    public void setImdb_rating(int imdb_rating) {
+        this.imdb_rating = imdb_rating;
+    }
+
+    public int getTotal_revenue() {
+        return total_revenue;
+    }
+
+    public void setTotal_revenue(int total_revenue) {
+        this.total_revenue = total_revenue;
+    }
+
+    public long getMovieid() {
+        return movieid;
+    }
+
+    public void setMovieid(long movieid) {
+        this.movieid = movieid;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "genreid=" + genreid +
+                ", duration=" + duration +
+                ", genre='" + genre + '\'' +
+                ", imdb_rating=" + imdb_rating +
+                ", total_revenue=" + total_revenue +
+                ", movieid=" + movieid +
+                '}';
     }
 }

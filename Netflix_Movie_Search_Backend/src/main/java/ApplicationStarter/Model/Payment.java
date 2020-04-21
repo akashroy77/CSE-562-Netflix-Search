@@ -7,43 +7,52 @@ import javax.persistence.*;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="paymentPlan",nullable = false)
-    int paymentPlan;
-    @Column(name="paymentAmount",nullable = false)
-    int paymentAmount;
-    @Column(name="lateCharge",nullable = false)
-    int lateCharge;
-
-    public Payment(int paymentPlan, int paymentAmount, int lateCharge) {
-        this.paymentPlan = paymentPlan;
-        this.paymentAmount = paymentAmount;
-        this.lateCharge = lateCharge;
-    }
+    @Column(name="payment_plan",nullable = false)
+    String payment_plan;
+    @Column(name="payment_amount",nullable = false)
+    int payment_amount;
+    @Column(name="late_charge",nullable = false)
+    int late_charge;
 
     public Payment() {
     }
 
-    public int getPaymentPlan() {
-        return paymentPlan;
+    public Payment(String payment_plan, int payment_amount, int late_charge) {
+        this.payment_plan = payment_plan;
+        this.payment_amount = payment_amount;
+        this.late_charge = late_charge;
     }
 
-    public void setPaymentPlan(int paymentPlan) {
-        this.paymentPlan = paymentPlan;
+    public String getPayment_plan() {
+        return payment_plan;
     }
 
-    public int getPaymentAmount() {
-        return paymentAmount;
+    public void setPayment_plan(String payment_plan) {
+        this.payment_plan = payment_plan;
     }
 
-    public void setPaymentAmount(int paymentAmount) {
-        this.paymentAmount = paymentAmount;
+    public int getPayment_amount() {
+        return payment_amount;
     }
 
-    public int getLateCharge() {
-        return lateCharge;
+    public void setPayment_amount(int payment_amount) {
+        this.payment_amount = payment_amount;
     }
 
-    public void setLateCharge(int lateCharge) {
-        this.lateCharge = lateCharge;
+    public int getLate_charge() {
+        return late_charge;
+    }
+
+    public void setLate_charge(int late_charge) {
+        this.late_charge = late_charge;
+    }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "payment_plan=" + payment_plan +
+                ", payment_amount=" + payment_amount +
+                ", late_charge=" + late_charge +
+                '}';
     }
 }

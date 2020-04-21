@@ -1,24 +1,22 @@
-package ApplicationStarter.Controllers;
+package ApplicationStarter.Controllers.QueryController;
 
-import ApplicationStarter.Model.Repositories.UserRepository;
-import ApplicationStarter.Model.User;
+import ApplicationStarter.Model.*;
+import ApplicationStarter.Model.Repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/get")
-public class DataQueryController {
+@RequestMapping("queryuser")
+public class UserQueryController {
     @Autowired
     private UserRepository userRepository;
-    @GetMapping("/NetflixDB")
+    @GetMapping("/user")
     public List<User> getAllUsers(){
-
-        List<User> userList =new ArrayList<User>();
+        List<User> userList;
         userList = (List<User>) userRepository.findAll();
         return userList;
     }

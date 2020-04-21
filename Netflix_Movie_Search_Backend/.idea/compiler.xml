@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Netflix_Movie_Search_Backend" />
         <module name="NetflixMovieSearchApp" />
+        <module name="Netflix_Movie_Search_Backend" />
       </profile>
     </annotationProcessing>
   </component>
