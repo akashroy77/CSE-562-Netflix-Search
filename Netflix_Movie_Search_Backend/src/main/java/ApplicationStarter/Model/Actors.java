@@ -5,25 +5,25 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import javax.persistence.*;
 
 @Entity
-@Table(name="cast")
+@Table(name = "cast")
 @CrossOrigin("*")
 public class Cast {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="cast_id",nullable = false)
-    long id;
-    @Column(name="cast_name",nullable = false)
+    @Column(name="castid",nullable = false)
+    int id;
+    @Column(name="castname",nullable = false)
     String cast_name;
     @Column(name="movie_id",nullable = false)
-    long movie_id;
+    int movie_id;
     @Column(name="country",nullable = false)
     String country;
-    @Column(name="cast_dob",nullable = false)
+    @Column(name="castdob",nullable = false)
     String cast_dob;
     @Column(name="address",nullable = false)
     String address;
 
-    public Cast(long id, String cast_name, long movie_id, String country, String cast_dob, String address) {
+    public Cast(int id, String cast_name, int movie_id, String country, String cast_dob, String address) {
         this.id = id;
         this.cast_name = cast_name;
         this.movie_id = movie_id;
@@ -39,7 +39,7 @@ public class Cast {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -51,11 +51,11 @@ public class Cast {
         this.cast_name = cast_name;
     }
 
-    public long getMovie_id() {
+    public int getMovie_id() {
         return movie_id;
     }
 
-    public void setMovie_id(long movie_id) {
+    public void setMovie_id(int movie_id) {
         this.movie_id = movie_id;
     }
 
