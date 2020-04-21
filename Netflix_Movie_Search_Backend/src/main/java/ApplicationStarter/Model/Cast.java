@@ -1,9 +1,12 @@
 package ApplicationStarter.Model;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="cast")
+@CrossOrigin("*")
 public class Cast {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

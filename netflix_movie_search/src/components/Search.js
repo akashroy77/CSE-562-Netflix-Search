@@ -3,22 +3,59 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, InputGroup, Button, FormControl, Dropdown, DropdownButton } from 'react-bootstrap';
 import PaymentList from './PaymentList';
 import GenreList from './GenreList';
+import axios from 'axios';
 
 class Search extends Component{
     constructor(props) {
         super(props);
         this.state = {
-          selectValue: ""
+          selectValue: "",
+          greeting: "This is a false greeting",
+          selectedNumber : 1,
         };
     
         this.handleDropdownChange = this.handleDropdownChange.bind(this);
+        this.updateInput = this.updateInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
       }
+
+      // componentDidMount() {
+      //   // fetch("/NetflixDB/category/search?selectedNumber=" + this.state.selectedNumber).then(function(response) {
+      //   //        return response.text();
+      //   //     }).then((response) => {
+      //   //           console.log(response);
+      //   //        });
+
+      //   axios.get("http://localhost:8080/api/NetflixDB/category/search?selectedNumber="+ this.state.selectedNumber)
+      //   .then(response => response.data)
+      //   .then((data) => 
+      //       this.setState({selectValue : data})
+      //   );
+      // }
 
     
       handleDropdownChange(e) {
         this.setState({ selectValue: e.target.value });
         console.log("Selected : " ,this.state.selectValue);
       }
+
+      handleSearchClick(){
+        this.setState({selectedNumber : 1})
+      }
+
+      updateInput(event){
+        this.setState({selectedNumber : event.target.value})
+        }
+        
+        
+        handleSubmit(){
+          console.log('Your input value is: ' + this.state.selectedNumber)
+          axios.get("http://localhost:8080/api/NetflixDB/category/search?selectedNumber="+ this.state.selectedNumber)
+        .then(response => response.data)
+        .then((data) => 
+            this.setState({selectValue : data})
+        );
+        }
 
       render() {
         if(this.state.selectValue === "PaymentPlan"){
@@ -28,27 +65,19 @@ class Search extends Component{
         }else{
             temp = null;
         }
+        console.log(this.state.selectValue);
       return (
         <Container className="spacing">
-          <InputGroup>
-                <FormControl
-                placeholder="Select type and search.."
-                aria-label="Search Bar"
-                aria-describedby="basic-addon2"
-                />
-                <InputGroup.Append>
-                    <select id="dropdown" onChange={this.handleDropdownChange}>
-                        <option value="Movies">Movies</option>
-                        <option value="PaymentPlan">Payment Plan</option>
-                        <option value="Cast">Cast</option>
-                        <option value="Genre">Genre</option>
-                    </select>
+          <input type="text" onChange={this.updateInput}></input>
+          <input type="submit" onClick={this.handleSubmit} ></input>
 
+          <div>
+                    <p>The Genres with imdb rating : {this.state.selectedNumber}</p>
 
-                    <Button variant="outline-secondary">Search</Button>
-
-                </InputGroup.Append>
-            </InputGroup>
+                    {
+                        <p>{this.state.selectValue}</p>
+                    }
+                </div>
         </Container>
       );
     }

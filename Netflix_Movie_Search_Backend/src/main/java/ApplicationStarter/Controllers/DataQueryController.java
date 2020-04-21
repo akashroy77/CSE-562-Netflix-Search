@@ -9,13 +9,11 @@ import ApplicationStarter.Model.Repositories.PaymentRepository;
 //import ApplicationStarter.Model.Repositories.UserRepository;
 //import ApplicationStarter.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 @RestController
 @RequestMapping("/api")
@@ -49,6 +47,16 @@ public class DataQueryController {
 
         List<Category> categoryList =new ArrayList<Category>();
         categoryList = (List<Category>) categoryRepository.findAll();
+        return categoryList;
+    }
+
+    @Autowired
+    private CategoryRepository categoryRepository1;
+    @RequestMapping("/NetflixDB/category/search")
+    public List<Category> test2(@RequestParam("selectedNumber") int selectedNumber) {
+        System.out.println(selectedNumber);
+//        int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
+        List<Category> categoryList = (List<Category>) categoryRepository1.findByNameEndsWith(selectedNumber);
         return categoryList;
     }
 

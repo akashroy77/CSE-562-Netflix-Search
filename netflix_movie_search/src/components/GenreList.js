@@ -30,8 +30,8 @@ class GenreList extends Component {
                                     <tr key={genre.genreID}>
                                         <td>{genre.genre}</td>
                                         <td>{genre.duration}</td>
-                                        <td>{genre.imdbRating}</td>
-                                        <td>{genre.totalRevenue}</td>
+                                        <td>{genre.imdb_rating}</td>
+                                        <td>{genre.total_revenue}</td>
                                     </tr>
                                 </tbody>
                             </table>

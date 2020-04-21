@@ -116,9 +116,9 @@ class Filter extends React.Component {
     }
   
     render() {
-        if(this.state.selectValue === "PaymentPlan"){
+        if(this.state.category === "Adventure"){
             var temp = <PaymentList/>
-        }else if(this.state.selectValue === "Genre"){
+        }else if(this.state.category === "Horror"){
             var temp = <GenreList/>
         }else{
             var temp = null;

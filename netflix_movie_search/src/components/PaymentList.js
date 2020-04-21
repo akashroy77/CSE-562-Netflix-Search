@@ -24,39 +24,29 @@ class PaymentList extends Component {
                 <div>
                     <p>Total available plans are : {this.state.plans.length}</p>
 
-                    {
-                        this.state.plans.map((plan) => (
-                            <table border="1">
-                                <tbody>
-                                    <tr key={plan.paymentPlan}>
-                                        <td>{plan.paymentPlan}</td>
-                                        <td>{plan.paymentAmount}</td>
-                                        <td>{plan.lateCharge}</td>
+                    <table stripped bordered hover variant="dark" border = "1">
+                                <thead>
+                                    <tr>
+                                        <th>Payment Plan</th>
+                                        <th>Payment Amount</th>
+                                        <th>Late Charge</th>
                                     </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        this.state.plans.map((plan) => (
+                                            
+                                            <tr key={plan.paymentPlan}>
+                                                <td>{plan.paymentPlan}</td>
+                                                <td>{plan.paymentAmount}</td>
+                                                <td>{plan.lateCharge}</td>
+                                            </tr>
+                                        ))
+                                        
+                                    }
                                 </tbody>
-                            </table>
-                            // <div>
-                            // <Table stripped bordered hover variant="dark">
-                            //     {/* <thead>
-                            //         <tr>
-                            //             <th>#</th>
-                            //             <th>Movie Name</th>
-                            //             <th>Genre</th>
-                            //             <th>Total Views</th>
-                            //         </tr>
-                            //     </thead> */}
-                            //     <tbody>
-                            //         <tr>
-                            //             <td>{plan.paymentPlan}</td>
-                            //             <td>{plan.paymentAmount}</td>
-                            //             <td>{plan.lateCharge}</td>
-                            //         </tr>
-                            //     </tbody>
-                            // </Table>
-                            // </div>
-                    
-                        ))
-                    }
+                    </table> 
+
                 </div>
             // </Container>
         );
