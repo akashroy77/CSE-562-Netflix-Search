@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -91,6 +92,16 @@ public class DataQueryController {
         System.out.println(selectedNumber);
         List<Stream> streamList = (List<Stream>) streamRepository.findAllStream(selectedNumber);
         return streamList;
+    }
+
+    @Autowired
+    private TempRepository tempRepository;
+    @RequestMapping("/NetflixDB/add/user")
+    public String addNewUser(@RequestParam("selectedNumber") String selectedNumber) {
+        System.out.println(selectedNumber);
+        tempRepository.insertIntoTemp(selectedNumber);
+//        List<Category> categoryList = (List<Category>) categoryRepository1.findByNameEndsWith(selectedNumber);
+        return "First Name is ";
     }
 
     @GetMapping("/index.html")

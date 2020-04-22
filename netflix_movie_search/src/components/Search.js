@@ -94,7 +94,7 @@ class Search extends Component{
             <option value="Category">Category</option>
             <option value="Stream">Stream</option>
             <option value="Cast">Cast</option>
-        </select>
+          </select>
           <input type="submit" onClick={this.handleSubmit} ></input>
           <div>
                     <p>The Genres with imdb rating : {this.state.selectedNumber}</p>

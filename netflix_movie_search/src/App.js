@@ -5,6 +5,7 @@ import Search from './components/Search';
 import View from './components/View';
 import Filter from './components/Filter';
 import PaymentList from './components/PaymentList';
+import Insert from './components/Insert';
 
 class App extends React.Component{
  
@@ -15,6 +16,7 @@ class App extends React.Component{
         <Header/>
         <Search/>
         <Filter/>
+        <Insert/>
         <View/>
         {/* <PaymentList/> */}
       </div>
